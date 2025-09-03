@@ -6,7 +6,9 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const CONTENTLIST: typeof import('./constDictionary/home')['CONTENTLIST']
   const EffectScope: typeof import('vue')['EffectScope']
+  const TOP_NAVIGATION_LIST: typeof import('./constDictionary/header')['TOP_NAVIGATION_LIST']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const computed: typeof import('vue')['computed']
@@ -306,7 +308,9 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
+    readonly CONTENTLIST: UnwrapRef<typeof import('./constDictionary/home')['CONTENTLIST']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly TOP_NAVIGATION_LIST: UnwrapRef<typeof import('./constDictionary/header')['TOP_NAVIGATION_LIST']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
