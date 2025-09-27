@@ -1,0 +1,6 @@
+{
+  "home": "home",
+  "about": "About Us",
+  "userMessages": "You have {{count}} message.",
+  "userMessages_plural": "You have {{count}} messages."
+}

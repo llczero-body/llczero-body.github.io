@@ -14,7 +14,6 @@ declare module 'vue' {
     FrostedGlass: typeof import('./components/FrostedGlass.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
     RecommendCard: typeof import('./pages/components/recommendCard.vue')['default']
-    RecommendedCards: typeof import('./pages/components/recommendedCards.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

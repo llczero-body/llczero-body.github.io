@@ -1,29 +1,35 @@
 <script setup lang="ts">
-let active = ref('home')
-let isMenuOpen = ref(false)
+let active = ref("home");
+let isMenuOpen = ref(false);
+let router = useRouter();
 const toggleMenu = (obj: Object): void => {
-  console.log(obj, '123213')
-  active.value = obj.value
-}
+  active.value = obj.value;
+  router.push(obj.value);
+};
 </script>
 
 <template>
-  <el-affix style="width: 100%" :offset="10">
+  <el-affix style="width: 100%" :offset="0">
     <el-col :span="24">
       <FrostedGlass>
         <div class="herader-wrapper frosted-calss-text">
           <div class="right-wrapper">
             <div class="logo-title">zero的博客</div>
             <div class="hidden-xs-only right">
-              <div :class="[
-                'item',
-                active === item.value ? 'active frostedGlass' : ''
-              ]" @click="toggleMenu(item)" v-for="(item, index) in TOP_NAVIGATION_LIST" :key="index">
+              <div
+                :class="[
+                  'item',
+                  active === item.value ? 'active frostedGlass' : '',
+                ]"
+                @click="toggleMenu(item)"
+                v-for="(item, index) in TOP_NAVIGATION_LIST"
+                :key="index"
+              >
                 {{ item.label }}
               </div>
             </div>
           </div>
-          <div class="left">
+          <!-- <div class="left">
             <el-icon class="hidden-xs-only">
               <Search />
             </el-icon>
@@ -35,7 +41,7 @@ const toggleMenu = (obj: Object): void => {
                 <Fold />
               </el-icon>
             </div>
-          </div>
+          </div> -->
         </div>
       </FrostedGlass>
     </el-col>
@@ -75,6 +81,7 @@ const toggleMenu = (obj: Object): void => {
 
     .item:hover {
       color: rgb(249, 115, 22);
+      transform: translateY(-2px);
     }
   }
 

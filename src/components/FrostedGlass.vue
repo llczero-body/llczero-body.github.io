@@ -52,8 +52,8 @@
         // background: rgba(255, 255, 255, 0.25);
         filter: url(#glass-distortion);
         /* 背景模糊效果 - 苹果风格关键 */
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
     }
 }
 </style>

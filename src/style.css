@@ -67,17 +67,6 @@ button {
   padding: 10px 20px
 }
 
-/* 暗色主题下的毛玻璃效果 */
-@media (prefers-color-scheme: dark) {
-  .frostedGlass {
-    background: rgba(50, 50, 50, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow:
-      0 8px 32px 0 rgba(0, 0, 0, 0.2),
-      inset 0 2px 2px 0 rgba(255, 255, 255, 0.05);
-  }
-}
-
 
 .fontWeight {
   font-weight: 600;
@@ -86,18 +75,6 @@ button {
 @font-face {
   font-family: 'CustomFont';
   src: url('~/assets/font/font-Heavy.woff2') format('woff2');
-}
-
-.frostedGlass:hover {
-  /* background: rgba(255, 255, 255, 0.4); */
-  /* 半透明背景  */
-  /* filter: blur(10px); */
-  /* 背景模糊*/
-  /* Safari兼容*/
-  /* border: 1px solid rgba(255, 255, 255, 0.18); */
-  /* 边框*/
-  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
-  /* 阴影*/
 }
 
 button:hover {
@@ -153,4 +130,362 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  
+}
+/* ===== 代码高亮样式 ===== */
+
+/* 代码块容器 */
+.hljs {
+  border-radius: 12px;
+  padding: 1.5em !important;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+  background: #1a1a1a !important;
+  color: #e0e0e0;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 代码块内部代码 */
+.hljs code {
+  background: transparent !important;
+  padding: 0 !important;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* 行内代码 */
+code:not(.hljs) {
+  background: #f1f3f4;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #d23669;
+  font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+  border: 1px solid #e1e4e8;
+}
+
+/* 代码块标题栏（语言标识 + 复制按钮） */
+.hljs {
+  position: relative;
+}
+
+/* .hljs::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #2a2a2a;
+  color: #888;
+  font-size: 0.75em;
+  padding: 0.4em 0.8em;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+} */
+
+/* ===== 语法高亮颜色配置 ===== */
+
+/* 通用文本 */
+.hljs {
+  color: #e0e0e0;
+}
+
+/* 注释 */
+.hljs-comment,
+.hljs-quote {
+  color: #6a9955;
+  font-style: italic;
+}
+
+/* 关键字 */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: #569cd6 !important;
+}
+
+/* 类型 */
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #4ec9b0 !important;;
+}
+
+/* 字符串 */
+.hljs-string,
+.hljs-meta .hljs-string {
+  color: #ce9178 !important;;
+}
+
+/* 数字 */
+.hljs-number,
+.hljs-literal {
+  color: #b5cea8 !important;;
+}
+
+/* 函数 */
+.hljs-function .hljs-title,
+.hljs-name {
+  color: #dcdcaa !important;;
+}
+
+/* 变量 */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #9cdcfe !important;;
+}
+
+/* 属性 */
+.hljs-attribute {
+  color: #9cdcfe !important;;
+}
+
+/* 标签 */
+.hljs-tag,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #569cd6 !important;;
+}
+
+/* 标点符号 */
+.hljs-punctuation {
+  color: #d4d4d4 !important;;
+}
+
+/* 操作符 */
+.hljs-operator {
+  color: #d4d4d4 !important;;
+}
+
+/* 装饰器 */
+.hljs-meta {
+  color: #d4d4d4 !important;;
+}
+
+/* 强调 */
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+  color: #569cd6;
+}
+
+/* 链接 */
+.hljs-link {
+  color: #ce9178;
+  text-decoration: underline;
+}
+
+/* ===== 特定语言优化 ===== */
+
+/* TypeScript 特定 */
+.hljs-typescript .hljs-built_in {
+  color: #4ec9b0;
+}
+
+.hljs-typescript .hljs-interface {
+  color: #4ec9b0;
+}
+
+.hljs-typescript .hljs-enum {
+  color: #4ec9b0;
+}
+
+/* JavaScript 特定 */
+.hljs-javascript .hljs-built_in {
+  color: #dcdcaa;
+}
+
+/* CSS 特定 */
+.hljs-css .hljs-attribute {
+  color: #9cdcfe;
+}
+
+.hljs-css .hljs-number {
+  color: #b5cea8;
+}
+
+.hljs-css .hljs-selector-class {
+  color: #d7ba7d;
+}
+
+/* JSON 特定 */
+.hljs-json .hljs-attr {
+  color: #9cdcfe;
+}
+
+.hljs-json .hljs-literal {
+  color: #569cd6;
+}
+
+/* ===== 滚动条样式 ===== */
+.hljs::-webkit-scrollbar {
+  height: 8px;
+}
+
+.hljs::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 0 0 4px 4px;
+}
+
+.hljs::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+.hljs::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {
+  .hljs {
+    border-radius: 8px;
+    padding: 1em !important;
+    font-size: 13px;
+    margin: 1em 0;
+  }
+  
+  .hljs::before {
+    font-size: 0.7em;
+    padding: 0.3em 0.6em;
+  }
+}
+
+/* ===== 暗色/亮色主题支持 ===== */
+@media (prefers-color-scheme: light) {
+  .hljs {
+    background: #F9FAFB !important;
+    color: #24292e;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hljs::before {
+    background: #e1e4e8;
+    color: #586069;
+  }
+  
+  /* 亮色主题语法高亮 */
+  .hljs-light {
+    color: #24292e;
+  }
+  
+  .hljs-light .hljs-comment,
+  .hljs-light .hljs-quote {
+    color: #6a737d;
+  }
+  
+  .hljs-light .hljs-keyword,
+  .hljs-light .hljs-selector-tag {
+    color: #d73a49;
+  }
+  
+  .hljs-light .hljs-string {
+    color: #032f62;
+  }
+  
+  .hljs-light .hljs-number {
+    color: #005cc5;
+  }
+  
+  .hljs-light .hljs-function .hljs-title {
+    color: #6f42c1;
+  }
+}
+
+/* ===== 代码块行号（可选） ===== */
+.hljs.with-line-numbers {
+  counter-reset: line;
+  padding-left: 3.5em !important;
+}
+
+.hljs.with-line-numbers .line {
+  position: relative;
+}
+
+.hljs.with-line-numbers .line::before {
+  counter-increment: line;
+  content: counter(line);
+  position: absolute;
+  left: -3em;
+  width: 2.5em;
+  text-align: right;
+  color: #6a737d;
+  border-right: 1px solid #404040;
+  padding-right: 0.8em;
+  margin-right: 0.8em;
+}
+
+/* ===== 复制按钮样式（如果添加复制功能） ===== */
+.hljs-copy-button {
+  position: absolute;
+  top: 0.5em;
+  right: 3em;
+  background: #404040;
+  border: none;
+  color: #888;
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+  font-size: 0.75em;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.hljs:hover .hljs-copy-button {
+  opacity: 1;
+}
+
+.hljs-copy-button:hover {
+  background: #505050;
+  color: #fff;
+}
+
+/* ===== 引用块样式 ===== */
+.markdown-body  blockquote {
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-left: 4px solid #3b82f6;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #475569;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.markdown-body blockquote p {
+  margin: 0.5em 0;
+}
+.markdown-body img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.markdown-body blockquote :first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote :last-child {
+  margin-bottom: 0;
+}
+.markdown-body blockquote {
+  border-left: 4px solid #dfe2e5;
+  padding-left: 1em;
+  margin: 1em 0;
+  color: #6a737d;
+}
+.markdown-viewer :deep(blockquote) {
+  border-left: 4px solid #dfe2e5;
+  padding-left: 16px;
+  margin: 16px 0;
+  color: #6a737d;
 }

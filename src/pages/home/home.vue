@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { CARD_OBJ } from '~/mock/home.js'
+const router = useRouter();
+import { CARD_OBJ } from "~/mock/home";
+const jumpPage = (item) => {
+  router.push(`/blog-details/${item.id}`);
+};
 </script>
 
 <template>
-
   <!-- 头像 -->
   <avatar />
 
@@ -12,12 +15,15 @@ import { CARD_OBJ } from '~/mock/home.js'
     <el-row>
       <el-col :span="24">
         <div class="home-label-wrapper">
-          <FrostedGlass style="margin: 0px 12px 12px 0px" v-for="item in CONTENTLIST" :key="item.index">
+          <FrostedGlass
+            style="margin: 0px 12px 12px 0px"
+            v-for="item in CONTENTLIST"
+            :key="item.index"
+          >
             <span class="frosted-calss-text home-label">
               {{ item.label }}
             </span>
           </FrostedGlass>
-
         </div>
       </el-col>
     </el-row>
@@ -31,7 +37,13 @@ import { CARD_OBJ } from '~/mock/home.js'
           <div class="title">最新文章</div>
           <!-- <el-row :gutter="20"></el-row> -->
           <div class="card-container">
-            <el-col :span="12" :xs="24" v-for="(item, index) in CARD_OBJ" :key="index">
+            <el-col
+              :span="12"
+              :xs="24"
+              v-for="(item, index) in CARD_OBJ"
+              :key="index"
+              @click="jumpPage(item)"
+            >
               <card :item="item"></card>
             </el-col>
           </div>
@@ -39,10 +51,14 @@ import { CARD_OBJ } from '~/mock/home.js'
       </el-col>
 
       <el-col :span="7" :xs="24" :sm="24" :md="7">
-        <div class="right module  shadow">
+        <div class="right module shadow">
           <div class="title">推荐</div>
           <div class="card-container-recommend">
-              <div style="width: 100%" v-for="(item, index) in CARD_OBJ" :key="index">
+            <div
+              style="width: 100%"
+              v-for="(item, index) in CARD_OBJ"
+              :key="index"
+            >
               <recommendCard :item="item"></recommendCard>
             </div>
           </div>
@@ -51,6 +67,7 @@ import { CARD_OBJ } from '~/mock/home.js'
     </el-row>
   </section>
 
+  <Footer />
 </template>
 <style scoped lang="scss">
 .home-label-wrapper {
@@ -63,30 +80,28 @@ import { CARD_OBJ } from '~/mock/home.js'
     cursor: pointer;
     font-size: 20px;
     border: 1px solid transparent;
-     transform: all 1s ease;
+    transform: all 1s ease;
   }
 }
 
-.home-label:hover{
+.home-label:hover {
   transform: scale(1.1);
-     color: rgb(249, 115, 22);
-      border: 1px solid #fff;
-      background: rgba(244, 244, 244, 0.4);
-      box-shadow: 0 4px 6px #0000001a, inset 1px 1px 2px #ffffff4d;
+  color: rgb(249, 115, 22);
+  border: 1px solid #fff;
+  background: rgba(244, 244, 244, 0.4);
+  box-shadow: 0 4px 6px #0000001a, inset 1px 1px 2px #ffffff4d;
 }
 .card-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.card-container-recommend{
+.card-container-recommend {
   width: 100%;
 }
 
 .home-content {
-
 }
-
 
 .left,
 .right {

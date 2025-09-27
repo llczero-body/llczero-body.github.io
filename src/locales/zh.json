@@ -1,0 +1,7 @@
+
+{
+  "home": "主页",
+  "about": "关于我们",
+  "userMessages": "您有 {{count}} 条消息。",
+  "userMessages_plural": "您有 {{count}} 条消息。"
+}
