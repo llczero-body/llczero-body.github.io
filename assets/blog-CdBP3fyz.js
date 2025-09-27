@@ -1,0 +1,1 @@
+import{d as a,r as n,f as s,c as r,l as t,u as c,o as e}from"./index-CGUGFArJ.js";const l={class:"md-wrapper"},f=a({__name:"blog",setup(m){const o=n(null);return(p,_)=>(e(),s("div",l,[(e(),r(t(c(o))))]))}});export{f as default};
